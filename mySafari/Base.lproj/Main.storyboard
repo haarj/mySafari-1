@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,17 +17,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X6C-N3-OKv">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X6C-N3-OKv">
+                                <rect key="frame" x="0.0" y="76" width="600" height="524"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="BhP-ul-FfK"/>
                                 </connections>
                             </webView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ZP-0L-xFT">
+                                <rect key="frame" x="16" y="28" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="URL"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="X6C-N3-OKv" secondAttribute="bottom" id="5JA-LQ-uvm"/>
+                            <constraint firstItem="3ZP-0L-xFT" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="I9k-LP-XY5"/>
+                            <constraint firstItem="3ZP-0L-xFT" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="OfK-8c-oFa"/>
+                            <constraint firstAttribute="centerX" secondItem="3ZP-0L-xFT" secondAttribute="centerX" id="aeU-Aw-N4j"/>
+                            <constraint firstItem="X6C-N3-OKv" firstAttribute="top" secondItem="3ZP-0L-xFT" secondAttribute="bottom" constant="18" id="oy8-mx-FOF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="X6C-N3-OKv" secondAttribute="trailing" constant="-16" id="q0b-UO-nOx"/>
+                            <constraint firstItem="X6C-N3-OKv" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="wlx-bw-wf5"/>
+                            <constraint firstItem="3ZP-0L-xFT" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="yR8-8x-2V8"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="urlTextField" destination="3ZP-0L-xFT" id="ifD-dn-ldb"/>
                         <outlet property="webView" destination="X6C-N3-OKv" id="wS8-u4-47V"/>
                     </connections>
                 </viewController>
