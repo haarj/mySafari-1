@@ -8,9 +8,10 @@
 
 #import "ViewController.h"
 
-@interface ViewController () <UIWebViewDelegate>
+@interface ViewController () <UIWebViewDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UITextField *urlTextField;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -18,14 +19,38 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.activityIndicator.hidesWhenStopped = YES;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)webViewDidStartLoad:(UIWebView *)webView
+{
+    [self.activityIndicator startAnimating];
 }
 
-// this is nothing
+-(void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [self.activityIndicator stopAnimating];
+}
+
+-(void)performLoadRequestWithString:(NSString *)string
+{
+    NSURL *url = [NSURL URLWithString:string];
+    NSURLRequest *request = [NSURLRequest requestWithURL: url];
+    [self.webView loadRequest: request];
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self performLoadRequestWithString:textField.text];
+    [textField resignFirstResponder];
+    return YES;
+}
+- (IBAction)onBackButtonPressed:(UIButton *)sender 
+{
+    [self.webView goBack];
+}
+
+
+
 
 @end
