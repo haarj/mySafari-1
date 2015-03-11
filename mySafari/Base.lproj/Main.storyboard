@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -17,14 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X6C-N3-OKv">
+                            <webView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X6C-N3-OKv">
                                 <rect key="frame" x="0.0" y="76" width="600" height="451"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="BhP-ul-FfK"/>
                                 </connections>
                             </webView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ZP-0L-xFT">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ZP-0L-xFT">
                                 <rect key="frame" x="16" y="28" width="568" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="fnw-0j-Rwj"/>
@@ -45,7 +46,7 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="Bo5-pc-umt"/>
                                 </connections>
                             </textField>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="FsB-Fv-mwr">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="FsB-Fv-mwr">
                                 <rect key="frame" x="290" y="290" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="UDB-lV-uLT"/>
@@ -123,18 +124,18 @@
                                 <exclude reference="0gW-D4-FQg"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="HeV-iq-tZc"/>
-                                <exclude reference="RH6-yx-2hb"/>
-                                <exclude reference="dcx-RY-EEs"/>
                                 <exclude reference="2yz-Sr-quu"/>
                                 <exclude reference="Wt4-5a-gwA"/>
                                 <exclude reference="rho-cs-f6p"/>
                                 <exclude reference="dce-ZM-zv4"/>
                                 <exclude reference="fOG-mi-bgj"/>
+                                <exclude reference="kNL-Ca-cWS"/>
                                 <exclude reference="NCS-hS-Gvh"/>
                                 <exclude reference="ReH-hd-9cd"/>
                                 <exclude reference="ghi-Lu-07L"/>
-                                <exclude reference="kNL-Ca-cWS"/>
+                                <exclude reference="HeV-iq-tZc"/>
+                                <exclude reference="RH6-yx-2hb"/>
+                                <exclude reference="dcx-RY-EEs"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -142,18 +143,18 @@
                                 <include reference="0gW-D4-FQg"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="HeV-iq-tZc"/>
-                                <include reference="RH6-yx-2hb"/>
-                                <include reference="dcx-RY-EEs"/>
                                 <include reference="2yz-Sr-quu"/>
                                 <include reference="Wt4-5a-gwA"/>
                                 <include reference="rho-cs-f6p"/>
                                 <include reference="dce-ZM-zv4"/>
                                 <include reference="fOG-mi-bgj"/>
+                                <include reference="kNL-Ca-cWS"/>
                                 <include reference="NCS-hS-Gvh"/>
                                 <include reference="ReH-hd-9cd"/>
                                 <include reference="ghi-Lu-07L"/>
-                                <include reference="kNL-Ca-cWS"/>
+                                <include reference="HeV-iq-tZc"/>
+                                <include reference="RH6-yx-2hb"/>
+                                <include reference="dcx-RY-EEs"/>
                             </mask>
                         </variation>
                     </view>
