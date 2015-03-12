@@ -12,6 +12,8 @@
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UITextField *urlTextField;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UIButton *onBackButton;
+@property (weak, nonatomic) IBOutlet UIButton *onForwardButton;
 
 @end
 
@@ -24,7 +26,23 @@
 
 -(void)webViewDidStartLoad:(UIWebView *)webView
 {
+    NSLog(@"canGoBack:%d canGoForward:%d", self.webView.canGoBack, self.webView.canGoForward);
+
     [self.activityIndicator startAnimating];
+
+    if (self.webView.canGoBack) {
+        self.onBackButton.enabled = YES;
+    } else {
+        self.onBackButton.enabled = NO;
+    }
+
+    if (self.webView.canGoForward) {
+        self.onForwardButton.enabled = YES;
+    } else {
+        self.onForwardButton.enabled = NO;
+    }
+
+
 }
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView
@@ -43,6 +61,7 @@
 {
     [self performLoadRequestWithString:textField.text];
     [textField resignFirstResponder];
+
     return YES;
 }
 - (IBAction)onBackButtonPressed:(UIButton *)sender 
